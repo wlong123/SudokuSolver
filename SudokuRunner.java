@@ -3,9 +3,8 @@ public class SudokuRunner
 	public static void main(String [] args)
 	{
 		GameBoard b = new GameBoard();
-		int[] x = b.mostConstrained();
-		System.out.println(x[0]);
-		System.out.println(x[1]);
 		System.out.println(b);
+		System.out.println(b.canPlace(0,0,3));
+		System.out.println(b.canPlace(0,1,7));
 	}
 }
