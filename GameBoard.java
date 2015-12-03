@@ -78,7 +78,6 @@ public class GameBoard
 	{
 		int lowest = 123456;
 		int[] mostConstrained = new int[2];
-		int[] options = {1,2,3,4,5,6,7,8,9};
 		for(int r = 0; r < board.length; r++)
 		{
 			for(int c = 0; c < board.length; c++)
@@ -86,9 +85,9 @@ public class GameBoard
 				if(board[r][c] == 0)
 				{
 					int count = 0;
-					for(int i = 0; i < options.length; i++)
+					for(int i = 1; i < 10; i++)
 					{
-						if(canPlace(r,c,options[i]))
+						if(canPlace(r,c,i))
 							count++;
 					}
 					if(count < lowest)

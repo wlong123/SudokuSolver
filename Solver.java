@@ -4,7 +4,6 @@ public class Solver<E>
 	{
 		Stack<GameBoard> stack = new LinkedList<GameBoard>();
 		GameBoard board = new GameBoard();
-		int[] options = {1,2,3,4,5,6,7,8,9};
 		stack.push(board);
 		boolean solved = false;	
 		while(solved == false)
@@ -18,12 +17,12 @@ public class Solver<E>
 				solved = true;
 			}
 			int[] mostConstrained = curr.mostConstrained();
-			for(int i = 0; i < options.length; i++)
+			for(int i = 1; i < 10; i++)
 			{
-				if(curr.canPlace(mostConstrained[0], mostConstrained[1], options[i]))
+				if(curr.canPlace(mostConstrained[0], mostConstrained[1], i))
 				{
 					GameBoard temp = curr;
-					temp.place(mostConstrained[0],mostConstrained[1], options[i]);
+					temp.place(mostConstrained[0],mostConstrained[1], i);
 					stack.push(temp);
 				}
 			}
